@@ -33,8 +33,9 @@ static NSString * const autoCalcIsEnabled = @"autoCalcIsEnabled";
 static NSString *const lastWindowQuit = @"lastWindowQuit";
 
 @implementation SCAppController
-#pragma mark - Setters & Getters
-@synthesize numberFielda, numberFieldb, numberFieldc, positiveXAnswerField, negativeXAnswerField;
+
+@synthesize preferences, numberFielda, numberFieldb, numberFieldc, positiveXAnswerField, negativeXAnswerField;
+
 #pragma mark - AutoCalc Methods
 
 -(void)controlTextDidChange:(NSNotification *)obj{
@@ -78,10 +79,10 @@ static NSString *const lastWindowQuit = @"lastWindowQuit";
 }
 #pragma mark - Preference Window Loading
 -(IBAction)showPreferences:(id)sender{
-    if(!preferences){
-        preferences = [[SCPreferencesWindowController alloc] initWithWindowNibName:@"Preferences"];
+    if(!self.preferences){
+       self.preferences = [[SCPreferencesWindowController alloc] initWithWindowNibName:@"Preferences"];
     }
-    [preferences showWindow:self];
+    [self.preferences showWindow:self];
 }
 #pragma mark - User Defaults Initialisation
 +(void)initialize{
@@ -93,7 +94,7 @@ static NSString *const lastWindowQuit = @"lastWindowQuit";
 }
 #pragma mark - Object Lifecycle
 - (void)dealloc {
-    [preferences release];
+    [self.preferences release];
     [super dealloc];
 }
 

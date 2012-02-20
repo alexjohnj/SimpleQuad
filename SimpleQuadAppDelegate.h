@@ -8,15 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SimpleQuadAppDelegate : NSObject <NSApplicationDelegate> {
-    NSWindow *window;
-    NSTextField *positiveXLabel;
-    NSTextField *negativeXLabel;
-    NSTextFieldCell *positiveXTextFieldCell;
-    NSTextFieldCell *negativeXTextFieldCell;
-    NSTextField *positiveXTextField;
-    NSTextField *negativeXTextField;
-}
+@interface SimpleQuadAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSTextField *positiveXLabel;

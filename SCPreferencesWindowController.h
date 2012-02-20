@@ -10,5 +10,4 @@
 
 @interface SCPreferencesWindowController : NSWindowController
 
-
 @end
